@@ -5,13 +5,13 @@ file_path = r"C:\Users\zbign_x5x2ftd\OneDrive\Dokumenty\Overcoming_the_Five_Dysf
 
 
 reader = PyPDF2.PdfReader(file_path)
-page = reader.pages[54]
+page = reader.pages[82]
 parts = []
 
 
 def visitor_body(text, cm, tm, fontDict, fontSize):
         y = tm[5]
-        if (0 < y < 590):
+        if 0 < y < 590:
             parts.append(text)
 
 
@@ -32,14 +32,6 @@ text_body = "".join(parts)
 #         book_text_combined = "".join(book_text)
 #         return book_text_combined
 
-# def correct_words(text):
-#     modified_text_1 = text_body.replace(" ’s", "’s")
-#     modified_text_2 = modified_text_1.replace(" ’ve", "’ve")
-#     modified_text_3 = modified_text_2.replace(" ’m", "’m")
-#     modified_text_4 = modified_text_3.replace(" ’t", "’t")
-#     modified_text_5 = modified_text_4.replace(" ’s", "’s")
-# print(modified_text_5)
-# print(text_body)
 
 def correct_words(text):
     corrected_text = (text_body.replace("\n", " ").
@@ -56,9 +48,8 @@ def correct_words(text):
     print(corrected_text)
     return corrected_text
 
+
 language = 'en'
 my_mp3 = gTTS(text=correct_words(text_body), lang=language, slow=False)
 
 my_mp3.save("audiobook_2-compare.mp3")
-
-# os.system("mpg321 trial.mp3")
