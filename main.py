@@ -15,7 +15,7 @@ def get_text(path_to_file):
             page = reader.pages[page_nr]
             text_page = page.extract_text()
             book_text.append(text_page)
-        book_text_combined = " ".join(map(str, book_text))
+        book_text_combined = "".join(book_text)
         return book_text_combined
 
 
