@@ -1,10 +1,8 @@
 import PyPDF2
 from gtts import gTTS
+import config
 
-file_path = r"C:\Users\zbign_x5x2ftd\OneDrive\Dokumenty\Overcoming_the_Five_Dysfunction.pdf"
-
-
-reader = PyPDF2.PdfReader(file_path)
+reader = PyPDF2.PdfReader(config.file_path)
 book_parts = []
 
 
